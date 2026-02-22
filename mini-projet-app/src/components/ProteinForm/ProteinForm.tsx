@@ -8,37 +8,39 @@ const labels = Object.values(OBJECTIVES).map(obj => obj.label);
 function ProteinForm() {
   type FormData = {
   objectives: string[];
-  minWeight: number;
-  maxWeight: number;
-  rows: number;
+  minWeight: string;
+  maxWeight: string;
+  rows: string;
 };
 
 const [formData, setFormData] = useState<FormData>({
   objectives: [],
-  minWeight: 0,
-  maxWeight: 0,
-  rows: 0
+  minWeight: '',
+  maxWeight: '',
+  rows: ''
 });
 
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type, checked } = event.target;
+const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const { name, value, type, checked } = event.target;
 
-    if (type === "checkbox") {
-      setFormData(prev => ({
-        ...prev,
-        objectives: checked
-          ? [...prev.objectives, value]
-          : prev.objectives.filter(o => o !== value)
-      }));
-      return;
-    }
-
+  if (type === "checkbox") {
     setFormData(prev => ({
       ...prev,
-      [name]: Number(value)
+      objectives: checked
+        ? [...prev.objectives, value]
+        : prev.objectives.filter(o => o !== value)
     }));
-  };
+    return;
+  }
+
+  setFormData(prev => ({
+    ...prev,
+    [name]: value // toujours une string
+  }));
+};
+
+
 
   return (
     <>
@@ -73,21 +75,33 @@ const [formData, setFormData] = useState<FormData>({
             <label className="form-field">
               Poids minimum
               <input
-                type="number"
+                type="text"
                 name="minWeight"
                 value={formData.minWeight}
                 onChange={handleChange}
+                onBeforeInput={(e) => {
+                  if (!/^\d$/.test(e.data)) {
+                    e.preventDefault();
+                  }
+                }}
               />
+                
             </label>
 
             <label className="form-field">
               Poids maximum
               <input
-                type="number"
+                type="text"
                 name="maxWeight"
                 value={formData.maxWeight}
                 onChange={handleChange}
+                onBeforeInput={(e) => {
+                  if (!/^\d$/.test(e.data)) {
+                    e.preventDefault();
+                  }
+                }}
               />
+                      
             </label>
           </div>
         </div>
@@ -99,11 +113,17 @@ const [formData, setFormData] = useState<FormData>({
           <label className="form-field">
             Nombre de lignes
             <input
-              type="number"
+              type="text"
               name="rows"
               value={formData.rows}
               onChange={handleChange}
+              onBeforeInput={(e) => {
+                if (!/^\d$/.test(e.data)) {
+                  e.preventDefault();
+                }
+              }}
             />
+
           </label>
         </div>
 
@@ -112,10 +132,11 @@ const [formData, setFormData] = useState<FormData>({
       {/* Le tableau dépend directement du formulaire */}
       <ProteinTable
         objectives={formData.objectives}
-        minWeight={formData.minWeight}
-        maxWeight={formData.maxWeight}
-        rows={formData.rows}
+        minWeight={Number(formData.minWeight)}
+        maxWeight={Number(formData.maxWeight)}
+        rows={Number(formData.rows)}
       />
+
     </>
   );
 }
