@@ -1,0 +1,72 @@
+/* Conteneur général du formulaire */
+.protein-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.5rem;
+  background: #f7f7f7;
+  border-radius: 10px;
+  max-width: 450px;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Style des labels */
+.protein-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* Inputs classiques */
+.protein-form input[type="text"],
+.protein-form input[type="number"],
+.protein-form input[type="email"],
+.protein-form select {
+  margin-top: 0.4rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+/* Focus */
+.protein-form input:focus,
+.protein-form select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Groupe de checkbox */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.checkbox-group label {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+/* Bouton */
+.protein-form button {
+  margin-top: 1rem;
+  padding: 0.7rem 1rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.protein-form button:hover {
+  background: #005fcc;
+}
