@@ -1,0 +1,71 @@
+.protein-table-container {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.table-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #222;
+}
+
+.protein-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.protein-table thead {
+  background: #f4f6f9;
+}
+
+.protein-table th,
+.protein-table td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+}
+
+.protein-table th {
+  font-weight: 600;
+  color: #333;
+}
+
+.protein-table tr:hover td {
+  background: #f9fbfd;
+}
+
+
+.protein-table-container {
+  margin-top: 2rem; /* espace avec le formulaire */
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.export-btn {
+  padding: 0.6rem 1rem;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.export-btn:hover {
+  background: #218838;
+}

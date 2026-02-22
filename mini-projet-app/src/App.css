@@ -1,0 +1,21 @@
+/* Conteneur global de l'application */
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: "Inter", sans-serif;
+  color: #222;
+}
+
+/* Conteneur du contenu de l'appli */
+.app-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+body {
+  background: #112b52;
+  margin: 0;
+  padding: 0;
+}
