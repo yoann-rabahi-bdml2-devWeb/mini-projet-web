@@ -88,6 +88,17 @@
   accent-color: #007bff;
 }
 
+/* Responsive */
+@media (max-width: 600px) {
+  .protein-form {
+    padding: 1.2rem;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+}
+
 /* Bouton */
 .submit-btn {
   margin-top: 1rem;
@@ -109,4 +120,3 @@
 .submit-btn:active {
   transform: scale(0.98);
 }
-

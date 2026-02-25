@@ -69,3 +69,17 @@
 .export-btn:hover {
   background: #218838;
 }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .protein-table-container {
+    padding: 1.2rem;
+    overflow-x: auto;
+  }
+
+  .table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+}
