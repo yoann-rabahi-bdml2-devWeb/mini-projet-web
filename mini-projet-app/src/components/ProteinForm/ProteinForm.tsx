@@ -36,7 +36,7 @@ const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 
   setFormData(prev => ({
     ...prev,
-    [name]: value // toujours une string
+    [name]: value
   }));
 };
 

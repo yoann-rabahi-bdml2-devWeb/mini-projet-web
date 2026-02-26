@@ -10,7 +10,6 @@ type ProteinTableProps = {
 
 function ProteinTable({ objectives, minWeight, maxWeight, rows }: ProteinTableProps) {
 
-  // Conditions d'affichage
   if (
     objectives.length === 0 ||
     !minWeight ||
@@ -21,7 +20,6 @@ function ProteinTable({ objectives, minWeight, maxWeight, rows }: ProteinTablePr
     return null;
   }
 
-  // Génération des poids répartis entre min et max
   const step = rows > 1
     ? (maxWeight - minWeight) / (rows - 1)
     : 0;
@@ -30,7 +28,6 @@ function ProteinTable({ objectives, minWeight, maxWeight, rows }: ProteinTablePr
     Math.round(minWeight + i * step)
   );
 
-  // Fonction d'export CSV
   const exportCSV = () => {
     const header = ["Poids (kg)", ...objectives];
 
